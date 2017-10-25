@@ -235,8 +235,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-light
-                         spacemacs-dark)
+   dotspacemacs-themes '(spacemacs-dark
+                         solarized-light)
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
    dotspacemacs-colorize-cursor-according-to-state t
@@ -246,7 +246,7 @@ It should only modify the values of Spacemacs settings."
                                :size 14
                                :weight normal
                                :width normal
-                               :powerline-scale 1.2)
+                               :powerline-scale 1.1)
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands `M-x' (after pressing on the leader key).
@@ -455,7 +455,6 @@ It should only modify the values of Spacemacs settings."
 
 (defun dotspacemacs/user-config ()
   (setq ns-use-srgb-colorspace nil)
-  (setq powerline-default-separator 'wave)
 
   (setq rust-format-on-save t)
   )
