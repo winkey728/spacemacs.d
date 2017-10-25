@@ -115,10 +115,8 @@ This function should only modify configuration layer settings."
      rainbow-delimiters
 
      ;; unknown
-     window-purpose
      ivy-purpose
      heml-purpose
-     spacemacs-purpose-popwin
      password-generator
      helm-themes
      helm-swoop
@@ -452,6 +450,9 @@ It should only modify the values of Spacemacs settings."
   )
 
 (defun dotspacemacs/user-config ()
+  (setq split-width-threshold 80)
+  (setq split-height-threshold nil)
+
   (setq ns-use-srgb-colorspace nil)
 
   (setq rust-format-on-save t)
