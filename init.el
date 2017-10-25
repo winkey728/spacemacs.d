@@ -80,6 +80,9 @@ This function should only modify configuration layer settings."
      (syntax-checking :variables
                       syntax-checking-enable-tooltips nil
                       syntax-checking-enable-by-default nil)
+
+     ;; private
+     w-better-ui
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -117,6 +120,7 @@ This function should only modify configuration layer settings."
      ;; unknown
      ivy-purpose
      heml-purpose
+     spacemacs-purpose-popwin
      password-generator
      helm-themes
      helm-swoop
@@ -420,7 +424,7 @@ It should only modify the values of Spacemacs settings."
    ;; %z - mnemonics of buffer, terminal, and keyboard coding systems
    ;; %Z - like %z, but including the end-of-line format
    ;; (default "%I@%S")
-   dotspacemacs-frame-title-format "%I@%S"
+   dotspacemacs-frame-title-format "Winkey@%a"
    ;; Format specification for setting the icon title format
    ;; (default nil - same as frame-title-format)
    dotspacemacs-icon-title-format nil
@@ -450,6 +454,7 @@ It should only modify the values of Spacemacs settings."
   )
 
 (defun dotspacemacs/user-config ()
+  ;; try to split window horizontal anyhow
   (setq split-width-threshold 80)
   (setq split-height-threshold nil)
 
