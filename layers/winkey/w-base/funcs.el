@@ -86,6 +86,26 @@
         (cons (symbol-name major-mode) w/switch-major-mode-history))
   (funcall mode))
 
+(defun insert-line-above (&optional arg)
+  "Insert an empty line before the current line.
+With ARG, insert that many newlines.
+Position the cursor at its beginning, according to the current mode."
+  (interactive "p")
+  (move-beginning-of-line nil)
+  (newline arg)
+  (forward-line (- arg))
+  (indent-according-to-mode)
+  )
+
+(defun insert-line-below (&optional arg)
+  "Insert an empty line after the current line.
+With ARG, insert that many newlines.
+Position the cursor at its beginning, according to the current mode."
+  (interactive "p")
+  (move-end-of-line nil)
+  (newline arg)
+  (indent-according-to-mode))
+
 
 ;;; below definitions are copied from zilongshanren
 ;;; https://github.com/zilongshanren/spacemacs-private
@@ -102,5 +122,20 @@
     (if (projectile-project-p)
         (projectile-find-file)
       (counsel-file-jump))))
+
+(defun indent-buffer()
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
+(defun indent-region-or-buffer()
+  (interactive)
+  (save-excursion
+    (if (region-active-p)
+        (progn
+          (indent-region (region-beginning) (region-end))
+          (message "Indent selected region."))
+      (progn
+        (indent-buffer)
+        (message "Indent buffer.")))))
 
 ;;; zilongshanren ends

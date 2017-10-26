@@ -12,3 +12,16 @@
 
 (global-set-key (kbd "M-p") 'move-text-up)
 (global-set-key (kbd "M-n") 'move-text-down)
+(global-set-key (kbd "<S-return>") 'insert-line-below)
+(global-set-key (kbd "<C-S-return>") 'insert-line-above)
+
+
+(spacemacs/declare-prefix "o" "custom")
+
+(spacemacs/declare-prefix "ot" "toggle")
+
+(spacemacs/declare-prefix "ox" "text")
+(spacemacs/set-leader-keys "oxi" 'indent-region-or-buffer)
+(spacemacs/set-leader-keys "oxI" 'indent-buffer)
+(spacemacs/set-leader-keys "oxo" 'insert-line-below)
+(spacemacs/set-leader-keys "oxO" 'insert-line-above)
