@@ -85,6 +85,7 @@ This function should only modify configuration layer settings."
                       syntax-checking-enable-by-default nil)
 
      ;; private
+     w-base
      w-better-ui
      w-better-defaults
      )

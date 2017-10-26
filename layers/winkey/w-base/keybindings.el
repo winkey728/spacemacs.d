@@ -1,5 +1,5 @@
 ;;; -*- lexical-binding: t -*-
-;;; funcs.el --- w-better-ui layer packages file for Spacemacs.
+;;; keybindings.el --- w-base layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
@@ -9,3 +9,6 @@
 ;; This file is not part of GNU Emacs.
 ;;
 ;;; License: GPLv3
+
+(global-set-key (kbd "M-p") 'move-text-up)
+(global-set-key (kbd "M-n") 'move-text-down)
