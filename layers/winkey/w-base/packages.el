@@ -11,5 +11,17 @@
 ;;; License: GPLv3
 
 (defconst w-base-packages
-  '()
+  '(
+    smart-semicolon
+    )
   )
+
+(defun w-base/init-smart-semicolon ()
+  (use-package smart-semicolon
+    :defer t
+    :init
+    (progn
+      (add-hook 'c-mode-common-hook #'smart-semicolon-mode)
+      (add-hook 'js2-mode-hook #'smart-semicolon-mode)
+      (add-hook 'rust-mode-hook #'smart-semicolon-mode)
+      (add-hook 'sql-mode-hook #'smart-semicolon-mode))))
