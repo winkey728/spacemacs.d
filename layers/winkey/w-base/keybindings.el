@@ -12,8 +12,8 @@
 
 (global-set-key (kbd "M-p") 'move-text-up)
 (global-set-key (kbd "M-n") 'move-text-down)
-(global-set-key (kbd "<S-return>") 'insert-line-below)
-(global-set-key (kbd "<C-S-return>") 'insert-line-above)
+(global-set-key (kbd "<S-return>") 'evil-insert-line-below)
+(global-set-key (kbd "<C-S-return>") 'evil-insert-line-above)
 
 (unless (spacemacs/system-is-mac)
   (global-set-key (kbd "s-=") 'spacemacs/scale-up-font)
@@ -40,5 +40,5 @@
 (spacemacs/declare-prefix "ox" "text")
 (spacemacs/set-leader-keys "oxi" 'indent-region-or-buffer)
 (spacemacs/set-leader-keys "oxI" 'indent-buffer)
-(spacemacs/set-leader-keys "oxo" 'insert-line-below)
-(spacemacs/set-leader-keys "oxO" 'insert-line-above)
+(spacemacs/set-leader-keys "oxo" 'evil-insert-line-below)
+(spacemacs/set-leader-keys "oxO" 'evil-insert-line-above)

@@ -106,6 +106,24 @@ Position the cursor at its beginning, according to the current mode."
   (newline arg)
   (indent-according-to-mode))
 
+(defun evil-insert-line-above (&optional arg)
+  "Insert an empty line before the current line, change to INSERT state instead.
+With ARG, insert that many newlines.
+Position the cursor at its beginning, according to the current mode."
+  (interactive "p")
+  (insert-line-above arg)
+  (when (evil-normal-state-p)
+    (evil-insert-state)))
+
+(defun evil-insert-line-below (&optional arg)
+  "Insert an empty line after the current line, change to INSERT state instead.
+With ARG, insert that many newlines.
+Position the cursor at its beginning, according to the current mode."
+  (interactive "p")
+  (insert-line-below)
+  (when (evil-normal-state-p)
+    (evil-insert-state)))
+
 
 ;;; below definitions are copied from zilongshanren
 ;;; https://github.com/zilongshanren/spacemacs-private
