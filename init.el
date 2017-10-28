@@ -73,7 +73,6 @@ This function should only modify configuration layer settings."
      (ranger :variables
              ranger-show-preview t
              ranger-enter-with-minus t)
-     ;;;; deft
 
      ;; checkers
      (spell-checking :variables
@@ -88,6 +87,7 @@ This function should only modify configuration layer settings."
      w-base
      w-better-ui
      w-better-defaults
+     w-javascript
      w-chinese
      )
    ;; List of additional packages that will be installed without being

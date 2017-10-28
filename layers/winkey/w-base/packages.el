@@ -23,5 +23,6 @@
     (progn
       (add-hook 'c-mode-common-hook #'smart-semicolon-mode)
       (add-hook 'js2-mode-hook #'smart-semicolon-mode)
+      (add-hook 'css-mode-hook #'smart-semicolon-mode)
       (add-hook 'rust-mode-hook #'smart-semicolon-mode)
       (add-hook 'sql-mode-hook #'smart-semicolon-mode))))

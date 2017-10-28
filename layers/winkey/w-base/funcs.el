@@ -124,6 +124,12 @@ Position the cursor at its beginning, according to the current mode."
   (when (evil-normal-state-p)
     (evil-insert-state)))
 
+(defun enable-minor-mode (pair)
+  "Enable minor mode if filename match the regexp.  MY-PAIR is a cons cell (regexp . minor-mode)."
+  (if (buffer-file-name)
+      (if (string-match (car pair) buffer-file-name)
+          (funcall (cdr pair)))))
+
 
 ;;; below definitions are copied from zilongshanren
 ;;; https://github.com/zilongshanren/spacemacs-private
