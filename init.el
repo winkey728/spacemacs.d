@@ -467,6 +467,9 @@ It should only modify the values of Spacemacs settings."
   (setq ns-use-srgb-colorspace nil)
 
   (setq rust-format-on-save t)
+
+  ;; set plantuml.jar
+  (setq plantuml-jar-path (w/find-plantuml-jar-path))
   )
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))

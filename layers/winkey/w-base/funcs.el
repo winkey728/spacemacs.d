@@ -60,6 +60,23 @@
 (defun file-attr-system-number (attr)
   (nth 11 attr))
 
+;; Find plantuml.jar
+(defvar plantuml-cmd-jar-regexp
+  '("java -jar \\([.-_@#$/|a-zA-Z0-9]+\\)" . 1))
+(defun w/find-plantuml-jar-path ()
+  (let ((env (getenv "PLANTUML_JAR_PATH"))
+        (executable (executable-find "plantuml")))
+    (cond ((not (null env)) env)
+          ((not (null executable))
+           (if (file-readable-p executable)
+               (with-temp-buffer
+                 (insert-file-contents executable)
+                 (goto-char (point-min))
+                 (re-search-forward (car plantuml-cmd-jar-regexp) nil t)
+                 (match-string (cdr plantuml-cmd-jar-regexp)))
+             nil))
+          (t nil))))
+
 ;; Interactively change current buffer major mode
 (defvar w/switch-major-mode-history nil)
 (defun w/switch-major-mode (mode)
