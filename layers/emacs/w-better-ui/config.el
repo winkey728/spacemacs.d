@@ -49,3 +49,6 @@
                                                   gnus-article-mode
                                                   calendar-mode)
   "List of marjor modes be disabled to show line numbers")
+
+(defvar better-ui-show-which-function-header-line nil
+  "Wheter to show which function in the header line")

@@ -40,6 +40,7 @@
 
 (defun w-better-ui/init-which-func ()
   (use-package which-func
+    :if better-ui-show-which-function-header-line
     :init
     (progn
       (setq which-func-unknown "n/a")
