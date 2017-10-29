@@ -14,6 +14,7 @@
     beacon
     linum
     (which-func :location built-in)
+    spaceline-all-the-icons
     )
   )
 
@@ -40,23 +41,38 @@
 
 (defun w-better-ui/init-which-func ()
   (use-package which-func
-    :if better-ui-show-which-function-header-line
+    :after spaceline
     :init
     (progn
       (setq which-func-unknown "n/a")
-      ;; show the current function name in the header line
-      (defun set-header-line ()
-        (setq header-line-format
-              '((which-func-mode ("" which-func-format " ")))))
-      (add-hook 'prog-mode-hook 'set-header-line)
-      (add-hook 'text-mode-hook 'set-header-line))
+      (which-function-mode))
     :config
     (progn
-      (which-function-mode)
-      ;; remove which function mode from the mode line
-      (setq-default mode-line-misc-info
-                    (assq-delete-all 'which-function-mode mode-line-misc-info))
-      (with-eval-after-load 'spaceline
+      (when better-ui-show-which-function-header-line
+        ;; show the current function name in the header line
+        (defun set-header-line ()
+          (setq header-line-format
+                '((which-func-mode ("" which-func-format " ")))))
+        (add-hook 'prog-mode-hook 'set-header-line)
+        (add-hook 'text-mode-hook 'set-header-line)
+        ;; remove which function mode from the mode line
+        (setq-default mode-line-misc-info
+                      (assq-delete-all 'which-function-mode mode-line-misc-info))
         (spaceline-toggle-which-function-off)))
     )
   )
+
+(defun w-better-ui/init-spaceline-all-the-icons ()
+  (use-package spaceline-all-the-icons
+    :if better-ui-spaceline-all-the-icons
+    :after spaceline
+    :config
+    (progn
+      (setq inhibit-compacting-font-caches t)
+      (setq spaceline-all-the-icons-separator-type 'arrow)
+      (spaceline-toggle-all-the-icons-buffer-path-off)
+      (spaceline-toggle-all-the-icons-minor-modes-on)
+      (if better-ui-show-which-function-header-line
+          (spaceline-toggle-all-the-icons-which-function-off)
+        (spaceline-toggle-all-the-icons-which-function-on))
+      (spaceline-all-the-icons-theme))))

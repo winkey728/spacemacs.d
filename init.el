@@ -87,7 +87,6 @@ This function should only modify configuration layer settings."
      w-base
      w-better-ui
      w-better-defaults
-     w-mode-line
      w-javascript
      w-chinese
      )

@@ -52,3 +52,6 @@
 
 (defvar better-ui-show-which-function-header-line nil
   "Wheter to show which function in the header line")
+
+(defvar better-ui-spaceline-all-the-icons t
+  "Wheter to use spaceline-all-the-icons package")
