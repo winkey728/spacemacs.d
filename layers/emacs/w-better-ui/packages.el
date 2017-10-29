@@ -37,6 +37,7 @@
     "Disable to show line numbers for some marjor modes"
     (unless (member major-mode better-ui-linum-mode-inhibit-modes-list)
       ad-do-it))
+  (ad-activate 'linum-on)
   )
 
 (defun w-better-ui/init-which-func ()
