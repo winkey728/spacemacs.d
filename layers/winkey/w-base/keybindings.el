@@ -37,6 +37,7 @@
 
 
 (spacemacs/declare-prefix "o" "custom")
+(spacemacs/declare-prefix "oh" "hydra")
 
 (spacemacs/declare-prefix "ot" "toggle")
 (spacemacs/set-leader-keys "otm" 'w/switch-major-mode)
