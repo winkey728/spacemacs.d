@@ -47,3 +47,9 @@
 (spacemacs/set-leader-keys "oxI" 'indent-buffer)
 (spacemacs/set-leader-keys "oxo" 'evil-insert-line-below)
 (spacemacs/set-leader-keys "oxO" 'evil-insert-line-above)
+
+(spacemacs/declare-prefix "ol" "layout")
+(spacemacs/set-leader-keys "oll" 'w/load-layouts)
+(spacemacs/set-leader-keys "ols" 'w/save-layouts)
+
+(spacemacs/set-leader-keys "pf" 'zilongshanren/open-file-with-projectile-or-counsel-git)

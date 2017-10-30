@@ -12,9 +12,10 @@
 
 (with-eval-after-load "lispy"
   (or (spacemacs/system-is-mac) (define-key lispy-mode-map (kbd "M-d") nil)) ;; do not ovveride copy-line
+  (define-key lispy-mode-map (kbd "M-n") nil)
   (define-key lispy-mode-map (kbd "M-1") 'lispy-describe-inline)
   (define-key lispy-mode-map (kbd "M-2") 'lispy-arglist-inline)
-  (define-key lispy-mode-map (kbd "C-m") 'lispy-mark-symbol)
+  (define-key lispy-mode-map (kbd "s-M") 'lispy-mark-symbol)
   )
 
 (spacemacs/set-leader-keys "ohm" 'hydra-multiple-cursors/body)

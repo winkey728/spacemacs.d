@@ -41,6 +41,9 @@ This function should only modify configuration layer settings."
      (better-defaults :variables better-defauls-move-to-end-of-code-first t)
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
 
+     ;; spacemacs
+     (spacemacs-layouts :variables layouts-enable-autosave nil)
+
      ;; filetree
      (treemacs :variables
                reemacs-use-follow-mode t
@@ -471,6 +474,9 @@ It should only modify the values of Spacemacs settings."
 
   ;; set plantuml.jar
   (setq plantuml-jar-path (w/find-plantuml-jar-path))
+
+  ;; https://emacs-china.org/t/topic/186/35
+  (setq redisplay-dont-pause nil)
   )
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))

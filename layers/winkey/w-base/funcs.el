@@ -60,6 +60,14 @@
 (defun file-attr-system-number (attr)
   (nth 11 attr))
 
+(defun w/save-layouts ()
+  (interactive)
+  (persp-save-state-to-file (concat persp-save-dir "winkey")))
+
+(defun w/load-layouts ()
+  (interactive)
+  (persp-load-state-from-file (concat persp-save-dir "winkey")))
+
 ;; Find plantuml.jar
 (defvar plantuml-cmd-jar-regexp
   '("java -jar \\([.-_@#$/|a-zA-Z0-9]+\\)" . 1))
