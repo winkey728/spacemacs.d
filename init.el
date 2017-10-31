@@ -483,11 +483,9 @@ It should only modify the values of Spacemacs settings."
     (dolist (charset '(kana han symbol cjk-misc bopomofo))
       (set-fontset-font (frame-parameter nil 'font)
                         charset
-                        (or
-                         (and (spacemacs/system-is-mac) (font-spec :family "Hiragino Sans GB" :size 16))
-                         (and (spacemacs/system-is-linux) (font-spec :family "WenQuanYi Micro Hei" :size 16))
-                         (and (spacemacs/system-is-mswindows (font-spec :family "Microsoft Yahei" :size 14))))
-                        )))
+                        (cond ((spacemacs/system-is-mac) (font-spec :family "Hiragino Sans GB" :size 16))
+                              ((spacemacs/system-is-linux) (font-spec :family "WenQuanYi Micro Hei" :size 16))
+                              ((spacemacs/system-is-mswindows) (font-spec :family "Microsoft Yahei" :size 14))))))
     )
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
