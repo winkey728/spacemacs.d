@@ -92,6 +92,7 @@ This function should only modify configuration layer settings."
      w-better-defaults
      w-editing
      w-javascript
+     w-python
      w-chinese
      )
    ;; List of additional packages that will be installed without being
