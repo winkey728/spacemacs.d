@@ -160,7 +160,6 @@ This function should only modify configuration layer settings."
      symon
      ac-ispell
      ace-jump-mode
-     auto-complete
      auto-dictionary
      define-word
      google-translate
