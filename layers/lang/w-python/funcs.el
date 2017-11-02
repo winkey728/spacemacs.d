@@ -10,6 +10,13 @@
 ;;
 ;;; License: GPLv3
 
+(defun w/shell-command-to-string (&rest cmd)
+  (replace-regexp-in-string
+   "\r?\n$"
+   ""
+   (shell-command-to-string
+    (mapconcat 'identity cmd " "))))
+
 (defun w/activate-venv-add-pythonpath ()
   "Activate python virtualenv in current project and add current project root to PYTHONPATH"
   (interactive)
@@ -17,4 +24,4 @@
     (when (and root (file-exists-p root))
       (add-to-list 'python-shell-extra-pythonpaths root)
       (when (file-exists-p (concat root "Pipfile"))
-        (pyvenv-activate (shell-command-to-string "pipenv --venv"))))))
+        (pyvenv-activate (w/shell-command-to-string "pipenv --venv"))))))
