@@ -128,6 +128,10 @@ This function should only modify configuration layer settings."
      volatile-highlights
      rainbow-delimiters
 
+     ;; spacemacs-org
+     org-plus-contrib
+     toc-org
+
      ;; unknown
      ivy-purpose
      heml-purpose
@@ -489,7 +493,7 @@ It should only modify the values of Spacemacs settings."
                         (cond ((spacemacs/system-is-mac) (font-spec :family "Hiragino Sans GB" :size 16))
                               ((spacemacs/system-is-linux) (font-spec :family "WenQuanYi Micro Hei" :size 16))
                               ((spacemacs/system-is-mswindows) (font-spec :family "Microsoft Yahei" :size 14))))))
-    )
+  )
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
 (load custom-file 'no-error 'no-message)
