@@ -50,6 +50,7 @@ This function should only modify configuration layer settings."
                treemacs-use-filewatch-mode t)
 
      ;; lang
+     (clojure :variables clojure-enable-fancify-symbols t)
      emacs-lisp
      html
      javascript
@@ -70,12 +71,6 @@ This function should only modify configuration layer settings."
 
      ;; source-control
      (git :variables git-magit-status-fullscreen t)
-
-     ;; tools
-     prodigy
-     (ranger :variables
-             ranger-show-preview t
-             ranger-enter-with-minus t)
 
      ;; checkers
      (spell-checking :variables
