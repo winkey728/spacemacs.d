@@ -25,6 +25,8 @@
     :init
     (progn
       (add-hook 'emacs-lisp-mode-hook #'(lambda () (lispy-mode t)))
+      (add-hook 'clojure-mode-hook #'(lambda () (lispy-mode t)))
+      (add-hook 'cider-repl-mode-hook #'(lambda () (lispy-mode t)))
 
       (defun conditionally-enable-lispy ()
         (when (eq this-command 'eval-expression)
