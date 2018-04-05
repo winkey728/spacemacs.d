@@ -14,7 +14,6 @@
     beacon
     linum
     (which-func :location built-in)
-    spaceline-all-the-icons
     )
   )
 
@@ -62,18 +61,3 @@
         (spaceline-toggle-which-function-off)))
     )
   )
-
-(defun w-better-ui/init-spaceline-all-the-icons ()
-  (use-package spaceline-all-the-icons
-    :if better-ui-spaceline-all-the-icons
-    :after spaceline
-    :config
-    (progn
-      (setq inhibit-compacting-font-caches t)
-      (setq spaceline-all-the-icons-separator-type 'arrow)
-      (spaceline-toggle-all-the-icons-buffer-path-off)
-      (spaceline-toggle-all-the-icons-minor-modes-on)
-      (if better-ui-show-which-function-header-line
-          (spaceline-toggle-all-the-icons-which-function-off)
-        (spaceline-toggle-all-the-icons-which-function-on))
-      (spaceline-all-the-icons-theme))))
