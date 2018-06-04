@@ -12,7 +12,8 @@
 (defconst w-better-ui-packages
   '(
     beacon
-    linum
+    (display-line-numbers :location built-in)
+    (linum :location built-in)
     (which-func :location built-in)
     )
   )
@@ -38,6 +39,13 @@
       ad-do-it))
   (ad-activate 'linum-on)
   )
+
+(defun w-better-ui/post-init-display-line-numbers ()
+  (setq display-line-numbers-width 2)
+  (setq display-line-numbers-grow-only t)
+  (set-face-background 'line-number "#313335")
+  (set-face-foreground 'line-number-current-line "#859393")
+  (add-hook 'web-mode-hook #'display-line-numbers-mode))
 
 (defun w-better-ui/init-which-func ()
   (use-package which-func
