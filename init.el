@@ -50,7 +50,7 @@ This function should only modify configuration layer settings."
 
      ;; filetree
      (treemacs :variables
-               reemacs-use-follow-mode t
+               treemacs-use-follow-mode t
                treemacs-use-filewatch-mode t)
 
      ;; lang
