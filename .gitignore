@@ -12,3 +12,6 @@
 
 # temp elisp files
 backup.el
+
+# env
+.spacemacs.env

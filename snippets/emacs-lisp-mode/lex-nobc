@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: lexical binding and no byte compile
+# key: lex-nobc
+# --
+;;; ${1:`(file-name-nondirectory (or (buffer-file-name) (buffer-name)))`} -*- lexical-binding: t; no-byte-compile: t; -*-

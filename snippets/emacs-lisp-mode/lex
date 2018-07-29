@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: lexical binding
+# key: lex
+# --
+;;; ${1:`(file-name-nondirectory (or (buffer-file-name) (buffer-name)))`} -*- lexical-binding: t; -*-
